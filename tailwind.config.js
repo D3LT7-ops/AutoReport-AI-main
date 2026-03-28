@@ -1,0 +1,85 @@
+/** @type {import('tailwindcss').Config} */
+const path = require('path')
+
+module.exports = {
+  content: [
+    path.join(__dirname, './pages/**/*.{js,ts,jsx,tsx,mdx}'),
+    path.join(__dirname, './components/**/*.{js,ts,jsx,tsx,mdx}'),
+    path.join(__dirname, './app/**/*.{js,ts,jsx,tsx,mdx}'),
+    path.join(__dirname, './services/**/*.{js,ts,jsx,tsx}'),
+    path.join(__dirname, './lib/**/*.{js,ts,jsx,tsx}'),
+  ],
+  safelist: [
+    'bg-brand-50', 'bg-brand-100', 'bg-brand-600', 'bg-brand-700',
+    'text-brand-500', 'text-brand-600', 'text-brand-700',
+    'border-brand-200',
+    'bg-emerald-50', 'bg-emerald-100',
+    'text-emerald-600', 'text-emerald-700', 'text-emerald-800',
+    'border-emerald-100', 'border-emerald-200',
+    'bg-red-50', 'bg-red-100',
+    'text-red-500', 'text-red-600',
+    'border-red-100', 'border-red-200',
+    'bg-purple-50', 'bg-purple-100',
+    'text-purple-600', 'border-purple-200',
+    'bg-amber-50', 'bg-amber-100',
+    'text-amber-600', 'border-amber-200',
+    'bg-surface-50', 'bg-surface-100',
+    'text-surface-400', 'text-surface-500', 'text-surface-600',
+    'text-surface-800', 'text-surface-900',
+    'border-surface-100', 'border-surface-200',
+    'shadow-card', 'shadow-card-hover', 'shadow-modal',
+    'animate-fade-in', 'animate-slide-up', 'animate-slide-in',
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['DM Sans', 'sans-serif'],
+        display: ['Plus Jakarta Sans', 'sans-serif'],
+      },
+      colors: {
+        brand: {
+          50: '#f0f4ff',
+          100: '#e0e8ff',
+          200: '#c7d6ff',
+          300: '#a3b8ff',
+          400: '#7b91ff',
+          500: '#5b6ef5',
+          600: '#4350e8',
+          700: '#3640cc',
+          800: '#2e36a4',
+          900: '#2b3382',
+          950: '#1a1f52',
+        },
+        surface: {
+          50: '#f8fafc',
+          100: '#f1f5f9',
+          200: '#e2e8f0',
+          300: '#cbd5e1',
+          400: '#94a3b8',
+          500: '#64748b',
+          600: '#475569',
+          700: '#334155',
+          800: '#1e293b',
+          900: '#0f172a',
+          950: '#020617',
+        },
+      },
+      boxShadow: {
+        'card': '0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px -1px rgba(0, 0, 0, 0.07)',
+        'card-hover': '0 4px 16px -2px rgba(0, 0, 0, 0.10), 0 2px 6px -2px rgba(0, 0, 0, 0.08)',
+        'modal': '0 20px 60px -12px rgba(0, 0, 0, 0.25)',
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.4s ease-out',
+        'slide-up': 'slideUp 0.3s ease-out',
+        'slide-in': 'slideIn 0.3s ease-out',
+      },
+      keyframes: {
+        fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+        slideUp: { '0%': { opacity: '0', transform: 'translateY(12px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+        slideIn: { '0%': { opacity: '0', transform: 'translateX(-12px)' }, '100%': { opacity: '1', transform: 'translateX(0)' } },
+      },
+    },
+  },
+  plugins: [],
+}
